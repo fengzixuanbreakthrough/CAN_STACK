@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProjectAssistant>
+    <Tools>
+        <LegacyConverter Version="1.8.24"/>
+        <DDM Version="5.18.37 SP1"/>
+    </Tools>
+    <Input>
+        <ECUEX>Config\System\SystemExtract.arxml</ECUEX>
+    </Input>
+    <References>
+        <DiagECUC>Config\System\DiagnosticsDescriptionData.arxml</DiagECUC>
+    </References>
+    <Display>
+        <FileSet Id="" CS="e1707a37">
+            <File Order="0" EcuInstance="MyECU" Hash="653b68a91da683311cb88bfa4f142c36" FileCategory="legacy_communication_data">$(DpaProjectFolder)\Inputfiles\CAN.dbc</File>
+            <File Order="1" EcuInstance="CGW" FileCategory="communication_system_extract">E:\Davinci\20240509\CGW050901.arxml</File>
+            <Diagnostic>
+                <Description Hash="e0ae908913d93caf691f8c3440b9d7bb">$(DpaProjectFolder)\Inputfiles\ForTraining.cdd</Description>
+                <Ecu>New_ECU_1</Ecu>
+                <Variant>CommonDiagnostics</Variant>
+                <UseLegacySignalImport>false</UseLegacySignalImport>
+            </Diagnostic>
+        </FileSet>
+        <Merge>
+            <Path Id="COMPOSITION-SW-COMPONENT-TYPE" ARPath="/SoftwareTypes/ComponentTypes/CGWEcuComp"/>
+            <Path Id="ECU-INSTANCE" ARPath="/ECU/MyECU"/>
+            <Path Id="ROOT-SW-COMPOSITION-PROTOTYPE" ARPath="/System/System/CGWEcuComp"/>
+            <Path Id="SYSTEM" ARPath="/System/System"/>
+        </Merge>
+    </Display>
+</ProjectAssistant>
